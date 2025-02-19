@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects File Browser</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="file-browser">
+    <p>📂 Projects</p>
+    <ul id="projectList">
+        <!-- Example: JavaScript will populate this dynamically -->
+        <li data-preview="previews/project1.png">📂 Binary Analytical Relationship Score (BARS)</li>
+        <li data-preview="previews/project2.png">📂 Linear Regression(Coming Soon)</li>
+        <li data-preview="previews/project2.png">📂 Logit Regression(Coming Soon)</li>
+        <li data-preview="previews/project2.png">📂 Conformal Prediction(Coming Soon)</li>
+        <li data-preview="previews/project2.png">📂 Decision Trees(Coming Soon)</li>
+        <li data-preview="previews/project2.png">📂 Random Forests(Coming Soon)</li>
+        <li data-preview="previews/project2.png">📂 Causal Discovery(Coming Soon)</li>
+        <li data-preview="previews/project2.png">📂 Metric Learning(Coming Soon)</li>
+    </ul>
+</div>
+
+<div class="preview-box" id="previewBox">
+    <img id="previewImage" src="" alt="Preview">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

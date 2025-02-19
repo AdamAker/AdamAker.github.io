@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Welcome to My Portfolio</h1>
+    <button onclick="showForm()">Open Form</button>
+    <div id="form-container"></div>
+
+    <script type="text/babel">
+        function DynamicForm() {
+            const [step, setStep] = React.useState(0);
+            const [formData, setFormData] = React.useState({});
+
+            const questions = [
+                { id: "name", question: "What's your name?", type: "text" },
+                { id: "email", question: "What's your email?", type: "email" },
+                { id: "age", question: "How old are you?", type: "number" },
+                { id: "feedback", question: "Any feedback for us?", type: "textarea" }
+            ];
+
+            const handleChange = (e) => {
+                setFormData({ ...formData, [questions[step].id]: e.target.value });
+            };
+
+            const handleNext = () => step < questions.length - 1 && setStep(step + 1);
+            const handleBack = () => step > 0 && setStep(step - 1);
+
+            return (
+                <div style={{ padding: '20px', backgroundColor: '#fff', borderRadius: '10px', boxShadow: '0px 4px 6px rgba(0,0,0,0.1)' }}>
+                    <h2>{questions[step].question}</h2>
+                    <input type={questions[step].type} value={formData[questions[step].id] || ""} onChange={handleChange} />
+                    <div style={{ marginTop: '10px' }}>
+                        {step > 0 && <button onClick={handleBack}>Back</button>}
+                        {step < questions.length - 1 ? (
+                            <button onClick={handleNext}>Next</button>
+                        ) : (
+                            <button onClick={() => alert(JSON.stringify(formData, null, 2))}>Submit</button>
+                        )}
+                    </div>
+                </div>
+            );
+        }
+
+        function showForm() {
+            ReactDOM.render(<DynamicForm />, document.getElementById("form-container"));
+        }
+    </script>
+</body>
+</html>

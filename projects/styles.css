@@ -1,0 +1,126 @@
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #333;
+    color: white;
+    padding: 10px 0;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1001; /* Above everything */
+}
+
+/* Navigation Links */
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #f4a261; /* Highlight color */
+}
+
+/* Push content down to avoid overlap */
+.content {
+    margin-top: 50px; /* Adjusted to fit under the navbar */
+}
+
+/* Adjust content position to prevent overlap */
+.content {
+    margin-top: 60px; /* Adjust to match the navbar height */
+}
+
+/* Ensure the file browser is pushed down */
+.file-browser {
+    margin-top: 50px; /* Optional extra spacing */
+}
+
+/*File Browser*/
+.file-browser {
+    width: 300px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: #f4f4f4;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+/* Create the main vertical line */
+.file-browser ul {
+    list-style-type: none;
+    padding-left: 20px;
+    position: relative;
+}
+
+/* Add a vertical line for the main list */
+.file-browser ul::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #888;
+}
+
+/* Each list item (project) */
+.file-browser li {
+    padding: 5px 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Horizontal branch line connecting each item */
+.file-browser li::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    width: 10px;
+    height: 2px;
+    background: #888;
+}
+
+/* Highlight effect when hovered */
+.file-browser li:hover {
+    background: #ddd;
+}
+
+/* Preview Box - Centered */
+.preview-box {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed to stay centered */
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 400px;
+    transform: translate(-50%, -50%); /* Centering Trick */
+    border: 2px solid #aaa;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensures it appears above everything */
+    padding: 10px;
+    text-align: center;
+}
+
+/* Image inside preview box */
+.preview-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures proper scaling */
+}
