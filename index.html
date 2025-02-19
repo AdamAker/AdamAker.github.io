@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <meta name="description" content="PhD physics student exploring mathematical models, feature selection, and data science. Educator, content creator, and researcher.">
+    <meta name="keywords" content="Physics, Data Science, Feature Selection, Research, Tutoring, Programming">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,6 +13,7 @@
             padding: 0;
             background-color: #f4f4f4;
             text-align: left;
+            line-height: 1.6;
         }
         .container {
             width: 90%;
@@ -53,6 +56,7 @@
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
+            justify-content: center;
             padding-top: 10px;
         }
         .buttons a {
@@ -65,6 +69,16 @@
         }
         .buttons a:hover {
             background: #5599cc;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .social-icons img {
+            width: 30px;
+            height: 30px;
         }
         @media (min-width: 768px) {
             .content {
@@ -79,16 +93,23 @@
                 width: 75%;
             }
         }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #333;
+            color: white;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Portfolio</h1>
+        <h1>Exploring Physics, Data, and Code – My Portfolio</h1>
     </header>
     <div class="container">
         <div class="content">
             <aside class="sidebar">
-                <img src="IMG_6326.jpeg" alt="Profile Picture" class="profile-img">
+                <img src="IMG_6326.jpeg" alt="Profile Picture" class="profile-img" loading="lazy">
                 <div class="section">
                     <h2>About Me</h2>
                     <p>Hi, I'm a PhD student in physics, specializing in constructing mathematical models of physical phenomena. My research focuses on feature selection—determining the most relevant inputs for predictive models.</p>
@@ -99,7 +120,7 @@
                 </div>
                 <div class="section">
                     <h2>Skills</h2>
-                    <p>Julia (3 years), Python (3 years), SQL (2 years), Tutoring (12 years), Technical Writing (1 year), Research (2 years)</p>
+                    <p>Julia (3 years), Python (2 years), SQL (3 years), Tutoring (12 years)</p>
                 </div>
             </aside>
             <main class="main-content">
@@ -114,5 +135,13 @@
             </main>
         </div>
     </div>
+    <footer>
+        <p>Contact me through:</p>
+        <div class="social-icons">
+            <a href="mailto:your-email@example.com"><img src="Email_Icon.jpg" alt="Email"></a>
+            <a href="https://www.linkedin.com/in/adam-aker/"><img src="LinkedIn_Icon.jpg" alt="LinkedIn"></a>
+            <a href="https://www.youtube.com/@adamthetutor"><img src="Youtube_Icon.jpg" alt="YouTube"></a>
+        </div>
+    </footer>
 </body>
 </html>
