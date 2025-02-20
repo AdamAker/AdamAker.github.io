@@ -1,0 +1,3 @@
+Index.html
+
+What needs to go in the main space of the page is some type of animation that shows off cool figures and bits of my code from my site. Not sure how to do this, but this would look really awesome. For mobile users we just have the nice simple landing page w/o the animation.
