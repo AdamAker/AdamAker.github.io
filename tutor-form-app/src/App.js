@@ -51,7 +51,7 @@ export default function App() {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.6 }}
-        className="w-1/3 min-w-[350px] px-12 py-16 bg-gray-800 bg-opacity-90 rounded-3xl shadow-lg text-center"
+        className="w-1/3 min-w-[350px] px-12 py-16 bg-gray-800 bg-opacity-70 rounded-3xl shadow-lg text-center"
       >
         <div className="text-lg text-gray-200 mb-6">
           {step + 1} / {questions.length}
