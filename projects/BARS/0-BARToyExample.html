@@ -3229,12 +3229,15 @@ font-family: "Arial", sans-serif;
 background-color: #004080;
 color: white;
 }
-img {
-max-width: 100%;
-height: auto;
+img, .quarto-figure img {
+max-width: 100% !important;
+height: auto !important;
 display: block;
 }
-</style>
+.quarto-figure, .cell-output-display {
+max-width: 100% !important;
+overflow-x: hidden;
+}</style>
 </head>
 
 <body>
