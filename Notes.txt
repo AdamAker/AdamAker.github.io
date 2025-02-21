@@ -12,3 +12,10 @@ Try to make an easy to navigate project site. I'm not sure how to lay this all o
 
 I also need to convert the BARS.md into a .ipynb to come up with some visualizations, and
 Then convert that to a .qmd to publish. This is the first priority, since it's an easy win!
+
+Workflow:
+
+1. Open Jupyter Lab to code whatever project you want to display
+2. Convert the the .ipynb file to a .qmd with appropriate YAML header in a RAW
+Module.
+3. When in the same directory in the shell  do "quarto render [filename] --execute --self-contained"

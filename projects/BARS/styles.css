@@ -5,3 +5,8 @@ body {
     background-color: #004080;
     color: white;
 }
+
+.quarto-figure img {
+    max-width: 100%;
+    height: auto;
+}
