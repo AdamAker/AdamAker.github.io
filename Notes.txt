@@ -2,17 +2,6 @@ Index.html
 
 What needs to go in the main space of the page is some type of animation that shows off cool figures and bits of my code from my site. Not sure how to do this, but this would look really awesome. For mobile users we just have the nice simple landing page w/o the animation.
 
-Where I'm at 2/19/2025
-
-I got to the point where I can convert .ipynb's to .qmd and the preview the .qmds as 
-Webpages. Now my task is to somehow combine the notebooks. I'm worried that If I combine
-Them into a single .qmd, that I'll run into the same issue as when I had 1 gigantic note
-Book: the models run out of memory and go all crazy. So, I think what I'll do tomorrow is
-Try to make an easy to navigate project site. I'm not sure how to lay this all out though.
-
-I also need to convert the BARS.md into a .ipynb to come up with some visualizations, and
-Then convert that to a .qmd to publish. This is the first priority, since it's an easy win!
-
 Workflow:
 
 1. Open Jupyter Lab to code whatever project you want to display
@@ -21,3 +10,8 @@ Manually into the .qmd file later to ensure you can make them responsive [Maybe?
 3. Convert the the .ipynb file to a .qmd with appropriate YAML header in a RAW
 Module.
 4. When in the same directory in the shell  do "quarto render [filename] --execute --self-contained"
+
+Todo:
+1. Add in [3] and [4] to BARS navigation pages.
+2. Figure out how to make code generated figures responsive.
+3. Add CV link as a link on the front page.
