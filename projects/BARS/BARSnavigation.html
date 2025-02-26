@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background: rgba(0, 0, 0, 0.8);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+        .navbar a:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .content {
+            padding-top: 60px;
+        }
+    </style>
+    <title>Project Navigation</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom right, #00aaff, #ff00ff, #ff6600);
+            overflow: hidden;
+        }
+        svg {
+            width: 100vw;
+            height: 100vh;
+        }
+        .node text {
+            font-size: 14px;
+            text-anchor: middle;
+            fill: #333;
+        }
+        .node circle {
+            fill: #e0c095; /* Richer Light Tan */
+            stroke: #8b5a2b;
+            stroke-width: 2px;
+            cursor: pointer;
+            transition: fill 0.3s ease, transform 0.2s ease;
+        }
+        .node:hover circle {
+            fill: #ff66b2;
+            transform: scale(1.2);
+        }
+        .link {
+            stroke: #888;
+            stroke-width: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+        <a href="resources.html">Resources</a>
+    </div>
+    <svg></svg>
+    <script>
+        const nodes = [
+            { id: "[1]-Overview", url: "0-BARToyExample.html", size: 90 },
+            { id: "[2]-Feature Selection", url: "1-ALLmodel.html", size: 70 },
+            { id: "Blog", url: "blog.html", size: 35 },
+            { id: "Projects", url: "projects.html", size: 35 },
+            { id: "Contact", url: "contact.html", size: 35 },
+            { id: "Resources", url: "resources.html", size: 35 }
+        ];
+
+        const links = [
+            { source: "[1]-Overview", target: "[2]-Feature Selection", distance: 200 },
+            { source: "[1]-Overview", target: "Blog", distance: 150 },
+            { source: "[1]-Overview", target: "Projects", distance: 200 },
+            { source: "[1]-Overview", target: "Contact", distance: 250 },
+            { source: "[1]-Overview", target: "Resources", distance: 180 }
+        ];
+
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+
+        const svg = d3.select("svg");
+        const simulation = d3.forceSimulation(nodes)
+            .force("link", d3.forceLink(links).id(d => d.id).distance(d => d.distance))
+            .force("charge", d3.forceManyBody().strength(-400))
+            .force("center", d3.forceCenter(width / 2, height / 2))
+            .force("collision", d3.forceCollide(d => d.size + 10));
+
+        const link = svg.append("g")
+            .selectAll("line")
+            .data(links)
+            .enter().append("line")
+            .attr("class", "link");
+
+        const node = svg.append("g")
+            .selectAll("g")
+            .data(nodes)
+            .enter().append("g")
+            .attr("class", "node")
+            .on("click", (event, d) => window.location.href = d.url)
+            .call(d3.drag()
+                .on("start", dragStarted)
+                .on("drag", dragged)
+                .on("end", dragEnded));
+
+        node.append("circle")
+            .attr("r", d => d.size);
+
+        node.append("text")
+            .attr("dy", 5)
+            .text(d => d.id);
+
+        simulation.on("tick", () => {
+            link.attr("x1", d => d.source.x)
+                .attr("y1", d => d.source.y)
+                .attr("x2", d => d.target.x)
+                .attr("y2", d => d.target.y);
+
+            node.attr("transform", d => `translate(${d.x},${d.y})`);
+        });
+
+        function dragStarted(event, d) {
+            if (!event.active) simulation.alphaTarget(0.3).restart();
+            d.fx = d.x;
+            d.fy = d.y;
+        }
+
+        function dragged(event, d) {
+            d.fx = event.x;
+            d.fy = event.y;
+        }
+
+        function dragEnded(event, d) {
+            if (!event.active) simulation.alphaTarget(0);
+            d.fx = null;
+            d.fy = null;
+        }
+    </script>
+</body>
+</html>
