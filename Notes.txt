@@ -16,6 +16,8 @@ Then convert that to a .qmd to publish. This is the first priority, since it's a
 Workflow:
 
 1. Open Jupyter Lab to code whatever project you want to display
-2. Convert the the .ipynb file to a .qmd with appropriate YAML header in a RAW
+2. Make sure to save any images that you want to use: you'll need to input these 
+Manually into the .qmd file later to ensure you can make them responsive [Maybe?]
+3. Convert the the .ipynb file to a .qmd with appropriate YAML header in a RAW
 Module.
-3. When in the same directory in the shell  do "quarto render [filename] --execute --self-contained"
+4. When in the same directory in the shell  do "quarto render [filename] --execute --self-contained"
