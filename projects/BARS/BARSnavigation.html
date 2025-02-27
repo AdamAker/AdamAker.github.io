@@ -45,7 +45,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background: linear-gradient(to bottom right, #00aaff, #ff00ff, #ff6600);
+            background: linear-gradient(to bottom right, #00aaff, #f69b5e);
             overflow: hidden;
         }
         svg {
@@ -65,7 +65,7 @@
             transition: fill 0.3s ease, transform 0.2s ease;
         }
         .node:hover circle {
-            fill: #ff66b2;
+            fill: #5997fc;
             transform: scale(1.2);
         }
         .link {
@@ -77,7 +77,7 @@
 <body>
     <div class="navbar">
         <a href="../../index.html">Home</a>
-        <a href="../projects.html"">Projects</a>
+        <a href="../projects.html">Projects</a>
         <a href="blog.html">Blog</a>
         <a href="projects.html">Projects</a>
         <a href="contact.html">Contact</a>
@@ -86,20 +86,20 @@
     <svg></svg>
     <script>
         const nodes = [
-            { id: "[1]-Overview", url: "0-BARToyExample.html", size: 90 },
-            { id: "[2]-Feature Selection", url: "1-ALLmodel.html", size: 70 },
-            { id: "Blog", url: "blog.html", size: 35 },
-            { id: "Projects", url: "projects.html", size: 35 },
+            { id: "1. Overview", url: "0-BARToyExample.html", size: 90 },
+            { id: "2. Feature Selection", url: "1-ALLmodel.html", size: 70 },
+            { id: "3. BARS Model", url: "2-BARSmodel.html", size: 60 },
+            { id: "4. CARS Model", url: "3-BESTmodel.html", size: 65 },
             { id: "Contact", url: "contact.html", size: 35 },
             { id: "Resources", url: "resources.html", size: 35 }
         ];
 
         const links = [
-            { source: "[1]-Overview", target: "[2]-Feature Selection", distance: 200 },
-            { source: "[1]-Overview", target: "Blog", distance: 150 },
-            { source: "[1]-Overview", target: "Projects", distance: 200 },
-            { source: "[1]-Overview", target: "Contact", distance: 250 },
-            { source: "[1]-Overview", target: "Resources", distance: 180 }
+            { source: "1. Overview", target: "2. Feature Selection", distance: 200 },
+            { source: "1. Overview", target: "3. BARS Model", distance: 275 },
+            { source: "1. Overview", target: "4. CARS Model", distance: 200 },
+            { source: "1. Overview", target: "Contact", distance: 250 },
+            { source: "1. Overview", target: "Resources", distance: 180 }
         ];
 
         const width = window.innerWidth;
