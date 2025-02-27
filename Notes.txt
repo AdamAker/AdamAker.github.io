@@ -16,4 +16,4 @@ Todo:
 2. Figure out how to make code generated figures responsive.
 3. Add CV link as a link on the front page.
 
-Class on thunderstorms that produce tornadoes.
+Project Idea: get data on thunderstorms and build a Classifications on thunderstorms that produce tornadoes.
